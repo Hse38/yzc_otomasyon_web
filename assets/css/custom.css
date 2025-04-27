@@ -1,0 +1,483 @@
+/* Restore original header visibility */
+.header--logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.header--logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Remove top margin from viewport */
+.l-viewport {
+    margin-top: 0;
+}
+
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(12, 12, 12, 0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.top-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-header .logo {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.top-header .logo:hover {
+    transform: scale(1.1);
+}
+
+.top-header .logo-text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.top-header .nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.top-header .nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.top-header .nav-menu a:hover {
+    color: #0f33ff;
+}
+
+.top-header .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0f33ff;
+    transition: width 0.3s ease;
+}
+
+.top-header .nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .top-header {
+        padding: 0 20px;
+    }
+    
+    .top-header .nav-menu {
+        gap: 15px;
+    }
+    
+    .top-header .nav-menu a {
+        font-size: 12px;
+    }
+}
+
+.header--nav-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.slider--item-image {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.slider--item-image img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    transform: scale(1.1);
+    object-position: center;
+}
+
+/* Manyetik sensör resimlerinin özel stili */
+.sensor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: none;
+    padding: 20px;
+    background: white;
+}
+
+.modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm hidden items-center justify-center z-50;
+}
+
+.modal-overlay.active {
+    @apply flex;
+}
+
+.product-modal {
+    @apply bg-gray-900 bg-opacity-95 p-8 rounded-2xl max-w-2xl w-11/12 relative text-white shadow-2xl border border-gray-800;
+    animation: modal-slide 0.3s ease-out;
+}
+
+@keyframes modal-slide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-modal h3 {
+    @apply text-2xl font-bold mb-4 text-blue-500;
+}
+
+.product-modal p {
+    @apply text-gray-300 text-base leading-relaxed mb-4;
+}
+
+.close-modal {
+    @apply absolute top-4 right-4 text-gray-400 hover:text-blue-500 transition-colors duration-300 text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-800 focus:outline-none;
+}
+
+.close-modal:hover {
+    @apply transform rotate-90 transition-transform duration-300;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 1364px;
+    height: 308px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-overlay.active .popup-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.popup-header {
+    margin-bottom: 1.5rem;
+}
+
+.popup-title {
+    color: #0f33ff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.popup-body {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.popup-left-column {
+    flex: 1;
+    padding-right: 2rem;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.popup-right-column {
+    flex: 1;
+}
+
+.popup-section-title {
+    color: #0f33ff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.popup-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #0f33ff;
+}
+
+.popup-details {
+    margin-top: 1.5rem;
+}
+
+.popup-details p {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.popup-details strong {
+    color: #0f33ff;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.popup-left-column p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.popup-close:hover {
+    background: #0f33ff;
+    transform: rotate(90deg);
+}
+
+/* Responsive tasarım için medya sorgusu */
+@media (max-width: 1400px) {
+    .popup-content {
+        width: 90%;
+        height: auto;
+        min-height: 308px;
+        max-height: 80vh;
+    }
+}
+
+.slider--item {
+    position: relative;
+    pointer-events: none;
+}
+
+.slider--item-left,
+.slider--item-right {
+    opacity: 0.5;
+}
+
+.slider--item-left .slider--item-title,
+.slider--item-right .slider--item-title {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slider--item-center {
+    pointer-events: all;
+}
+
+.slider--item-center .slider--item-title {
+    opacity: 1;
+    visibility: visible;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+/* Özel slogan stili */
+.slider--item-center .slogan-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #ffffff, #4a90e2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.slider--item-center .slogan-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, #4a90e2, #ffffff);
+    border-radius: 2px;
+}
+
+.slider--item-center:hover .slogan-title {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #ffffff, #66a6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+}
+
+/* Slider navigation buttons */
+.slider--prev,
+.slider--next {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.slider--prev:hover,
+.slider--next:hover {
+    opacity: 1;
+}
+
+.intro--options > a:hover h3 {
+    color: #0066cc;
+    transition: color 0.3s ease-in-out;
+}
+
+.career-section {
+  text-align: left;
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.career-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.about--options {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: -20px;
+}
+
+.about--options a {
+  flex: 1;
+  margin: 0 10px;
+  background-color: #0026ff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.option-image {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.option-image img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+.about--options h3 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-image: url("../img/ChatGPT Image 27 Nis 2025 14_14_53.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.modal--options {
+    margin-left: 50px;
+} 
