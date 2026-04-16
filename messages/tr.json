@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Anasayfa",
+    "products": "Ürünler",
+    "about": "Hakkımızda",
+    "references": "Referanslar",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title": "Endüstriyel otomasyonda 2003'ten beri güvenilir çözüm ortağınız",
+    "subtitle": "GEFRAN ve ELCO yetkili bayiliği, yerli manyetik sensör üretimi ve uçtan uca saha desteği.",
+    "ctaPrimary": "Teklif Al",
+    "ctaSecondary": "Ürünleri İncele"
+  },
+  "footer": {
+    "copyright": "Tüm hakları saklıdır."
+  }
+}

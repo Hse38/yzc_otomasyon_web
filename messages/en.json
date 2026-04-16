@@ -1,0 +1,5 @@
+{
+  "nav": {"home":"Home","products":"Products","about":"About","references":"References","contact":"Contact"},
+  "hero": {"title":"Your trusted industrial automation partner since 2003","subtitle":"Authorized distributor of GEFRAN and ELCO, domestic magnetic sensor manufacturing and end-to-end field support.","ctaPrimary":"Get a Quote","ctaSecondary":"Explore Products"},
+  "footer": {"copyright":"All rights reserved."}
+}
