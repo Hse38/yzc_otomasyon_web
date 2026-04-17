@@ -9,15 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
+        brand: {
           950: "#060d1a",
           900: "#0a1628",
           800: "#0f2040",
-        },
-        blue: {
-          600: "#1d5cad",
+          700: "#1a3a6b",
           500: "#2d8cff",
           400: "#5aa3ff",
+          100: "#e6f0ff",
         },
         gray: {
           100: "#f0f4f9",

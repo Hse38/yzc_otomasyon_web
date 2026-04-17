@@ -7,10 +7,10 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 
 const formSchema = z.object({
   name: z.string().min(2),
+  company: z.string().optional(),
   email: z.string().email(),
   phone: z.string().min(10),
-  branch: z.string().min(2),
-  subject: z.string().min(3),
+  service: z.string().min(2),
   message: z.string().min(10),
 });
 
@@ -41,16 +41,16 @@ export async function POST(req: NextRequest) {
   if (resend) {
     await resend.emails.send({
       from: "Yazici Otomasyon <onboarding@resend.dev>",
-      to: [COMPANY.email.main, COMPANY.email.corlu],
-      subject: `[İletişim Formu] ${parsed.data.subject}`,
+      to: [COMPANY.email.main],
+      subject: `[Iletisim Formu] ${parsed.data.service}`,
       html: `
         <div style="font-family: Arial, sans-serif; background:#0a1628; color:#f0f4f9; padding:24px;">
           <h2 style="margin:0 0 16px;">Yeni İletişim Formu</h2>
           <p><b>Ad Soyad:</b> ${parsed.data.name}</p>
+          <p><b>Firma:</b> ${parsed.data.company ?? "-"}</p>
           <p><b>E-posta:</b> ${parsed.data.email}</p>
           <p><b>Telefon:</b> ${parsed.data.phone}</p>
-          <p><b>Şube:</b> ${parsed.data.branch}</p>
-          <p><b>Konu:</b> ${parsed.data.subject}</p>
+          <p><b>Urun/Hizmet:</b> ${parsed.data.service}</p>
           <p><b>Mesaj:</b><br/>${parsed.data.message}</p>
         </div>
       `,

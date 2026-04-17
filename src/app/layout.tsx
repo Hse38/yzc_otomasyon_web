@@ -10,8 +10,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yaziciotomasyon.com"),
-  title: "Yazıcı Otomasyon",
-  description: "Endüstriyel otomasyon çözümleri",
+  title: "Yazici Otomasyon | Endustriyel Otomasyon Cozumleri",
+  description:
+    "GEFRAN ve ELCO AUTOMATION yetkili bayisi Yazici Otomasyon: sensorden PLC sistemlerine endustriyel cozumler.",
 };
 
 export default function RootLayout({
