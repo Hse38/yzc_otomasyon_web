@@ -8,6 +8,7 @@ import { BrandsSection } from "@/components/BrandsSection";
 import { ReferencesSection } from "@/components/ReferencesSection";
 import { FaqSection } from "@/components/FaqSection";
 import { ContactSection } from "@/components/ContactSection";
+import { FocusMap } from "@/components/FocusMap";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
@@ -22,6 +23,7 @@ export default function HomePage() {
       <ProductsSection />
       <BrandsSection />
       <ReferencesSection />
+      <FocusMap lat={41.1007} lng={28.8833} zoom={13} />
       <FaqSection />
       <ContactSection />
       <Footer />
