@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container-layout grid gap-8 text-sm text-white/80 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="text-lg font-bold text-white">Yazici Otomasyon</p>
-          <p className="mt-2">2003'ten beri endustriyel otomasyon cozumleri.</p>
+          <p className="mt-2">2003&apos;ten beri endustriyel otomasyon cozumleri.</p>
         </div>
         <div>
           <p className="font-semibold text-white">Hizmetler</p>

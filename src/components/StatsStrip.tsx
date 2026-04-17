@@ -33,7 +33,11 @@ export function StatsStrip() {
         {COMPANY.stats.map((stat) => (
           <div key={stat.label} className="rounded-panel border border-white/10 bg-brand-900/60 p-5">
             <p className="text-3xl font-bold text-brand-400">
-              <CountUp value={stat.value} suffix={stat.suffix ?? ""} prefix={stat.prefix ?? ""} />
+              <CountUp
+                value={stat.value}
+                suffix={"suffix" in stat ? stat.suffix : ""}
+                prefix={"prefix" in stat ? stat.prefix : ""}
+              />
             </p>
             <p className="mt-1 text-sm text-white/80">{stat.label}</p>
           </div>

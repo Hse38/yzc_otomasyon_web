@@ -12,6 +12,8 @@ import { FocusMap } from "@/components/FocusMap";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <main>
